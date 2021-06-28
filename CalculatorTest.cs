@@ -22,8 +22,8 @@ namespace Assignment_Three_CalculatorDemo.Test
         public void Sub_SimpleValuesShouldCalculate()
         {
             //Arrange
-            double[] arr1 = { 10, 5, 5, 10, 5 };
-            double expected = 5;
+            double[] arr1 = { (-12), (-3), 5, 24 };
+            double expected = -38;
 
             //Act
             double actual = Calculator.Sub(arr1);
@@ -65,6 +65,23 @@ namespace Assignment_Three_CalculatorDemo.Test
             double actual = Calculator.Div(8, 0);
 
             //Assert
+            Assert.Equal(expected, actual);
+        }
+        [Theory]
+        [InlineData(10.5,2.3,24.15)]
+        [InlineData(0.5,10,5)]
+        public void Mul_Double_Number_Check(double x, double y , double expected )
+        {
+            double actual = Calculator.Mul(x, y);
+
+            Assert.Equal(expected, actual);
+        }
+        [Theory]
+        [InlineData(1000, 10, 100)]
+        public void Div_Double_Number_Check(double x, double y, double expected)
+        {
+            double actual = Calculator.Div(x, y);
+
             Assert.Equal(expected, actual);
         }
     }

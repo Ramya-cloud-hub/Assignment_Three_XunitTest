@@ -6,10 +6,11 @@ namespace Assignment_Three_CalculatorDemo
     {
         static void Main(string[] args)
         {
-            double[] arr = { 10, 5, 5, 10, 5 };
-       
+            double[] arr = { 20,10, 30, 40 };
+            double[] subArry = { (-12), (-3), 5,24 };
+
             double addResult = Add(arr);
-            double subResult = Sub(arr);
+            double subResult = Sub(subArry);
             double divResult = Div(100, 10);
             double mulResult = Mul(5, 10);
 
@@ -48,11 +49,12 @@ namespace Assignment_Three_CalculatorDemo
         }
         public static double Sub(double[] list)
         {
-            double result = 0;
-            for (int i = 0; i < list.Length; i++)
+            double result = list[0];
+          
+            for (int i = 1; i < list.Length; i++)
             {
-                result = list[i] - result;
-                Console.WriteLine(list[i]);
+                result -=list[i] ;
+              
             }
             return result;
         }
